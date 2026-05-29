@@ -1,0 +1,57 @@
+{
+  "permissions": {
+    "allow": [
+      "*",
+      "mcp__google-ads__list-accounts",
+      "mcp__google-ads__google-ads-download-report",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__chrome-devtools__wait_for",
+      "mcp__chrome-devtools__new_page",
+      "mcp__chrome-devtools__list_pages",
+      "mcp__chrome-devtools__select_page"
+    ],
+    "defaultMode": "auto"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/session-start-global.sh",
+            "timeout": 10,
+            "statusMessage": "Recording session start..."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/stop-global.sh",
+            "timeout": 15,
+            "statusMessage": "Checking session log..."
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/hooks/status-line.sh",
+    "refreshInterval": 10
+  },
+  "awaySummaryEnabled": false,
+  "autoUpdatesChannel": "latest",
+  "tui": "default",
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true,
+  "agentPushNotifEnabled": true
+}

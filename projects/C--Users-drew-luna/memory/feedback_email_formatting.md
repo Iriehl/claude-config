@@ -1,0 +1,43 @@
+---
+name: email-formatting-for-outlook
+description: "Use plain text UK professional email format - no markdown, no em dashes, no excess spacing"
+metadata: 
+  node_type: memory
+  type: feedback
+  originSessionId: caee2b44-73f4-4639-b72e-fc68d458e24f
+---
+
+Never use markdown formatting in emails intended for copy/paste into Outlook. The user copies emails directly into Outlook and sends to clients/devs - formatting must be clean with zero manual editing required.
+
+Why: Markdown symbols, em dashes, excess line breaks and nbsp characters all require manual cleanup before sending. Wasted time and looks unprofessional.
+
+How to apply - every time an email is written:
+
+1. NEVER use em dashes (—). Use a regular hyphen (-) instead. Non-negotiable.
+
+2. No markdown: no **, no ##, no backticks, no pipe tables, no blockquotes.
+
+3. No excess blank lines between every sentence. Write in proper flowing paragraphs. Each paragraph must be a single continuous line with no hard line breaks within it - terminal window width causes wrapped lines to carry into Outlook as hard returns, breaking paragraph flow.
+
+4. No nbsp or extra spacing characters. Clean single line breaks only.
+
+5. Structure as a UK professional business email:
+   - Short greeting
+   - One clear opening paragraph stating the purpose
+   - Numbered list for confirmations or action items if needed
+   - Technical sections below a simple divider if required
+   - Professional sign-off
+
+6. Section dividers: one simple line of hyphens (----------) only if needed. Not heavy repeated dash blocks.
+
+7. Code: include as-is, labelled clearly (e.g. SNIPPET 1:) with a blank line before and after. No backtick wrappers.
+
+8. No ALL CAPS headers. Use plain numbered or titled sections.
+
+9. ALWAYS save emails as a plain text file (.txt) in created/emails/ - never just output in the chat response. File name format: YYYY-MM-DD-short-description.txt (e.g. 2026-05-12-pmax-video-brief.txt).
+
+10. NEVER edit an existing email file. If iterating, always create a new versioned file (e.g. -v2.txt, -v3.txt) to preserve version history. The user may need to refer back to earlier drafts.
+
+11. After creating an email file, immediately run: Get-Content "path/to/file.txt" -Raw | Set-Clipboard - this copies the email directly to the user's clipboard so they can Ctrl+V straight into Outlook with no terminal copying needed.
+
+12. After creating an email file, log it to context/memory/YYYY-MM-DD.md under an "Emails Created" section - same as any other output file per memory-logging rules.

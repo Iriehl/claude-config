@@ -1,0 +1,32 @@
+# Credentials — contains live OAuth tokens, never commit
+.credentials.json
+
+# Conversation history — large and sensitive
+history.jsonl
+
+# Transient runtime files
+cache/
+sessions/
+daemon/
+daemon.log
+debug/
+downloads/
+file-history/
+paste-cache/
+shell-snapshots/
+telemetry/
+backups/
+jobs/
+ide/
+session-env/
+
+# Cache files
+stats-cache.json
+mcp-needs-auth-cache.json
+
+# Conversation session logs and artifacts in projects/
+# (keep only projects/*/memory/ directories)
+projects/**/*.jsonl
+projects/**/*.meta.json
+projects/**/subagents/
+projects/**/tool-results/
