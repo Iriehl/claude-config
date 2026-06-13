@@ -32,7 +32,7 @@ How to apply - every time an email is written:
 
 7. Code: include as-is, labelled clearly (e.g. SNIPPET 1:) with a blank line before and after. No backtick wrappers.
 
-8. No ALL CAPS headers. Use plain numbered or titled sections.
+8. No ALL CAPS section headers or titles anywhere in the email body. Use sentence case (e.g. "The headline:" not "THE HEADLINE:"). Plain numbered or titled sections only.
 
 9. ALWAYS save emails as a plain text file (.txt) in created/emails/ - never just output in the chat response. File name format: YYYY-MM-DD-short-description.txt (e.g. 2026-05-12-pmax-video-brief.txt).
 
@@ -41,3 +41,7 @@ How to apply - every time an email is written:
 11. After creating an email file, immediately run: Get-Content "path/to/file.txt" -Raw | Set-Clipboard - this copies the email directly to the user's clipboard so they can Ctrl+V straight into Outlook with no terminal copying needed.
 
 12. After creating an email file, log it to context/memory/YYYY-MM-DD.md under an "Emails Created" section - same as any other output file per memory-logging rules.
+
+13. ALWAYS sign off emails as: Many thanks,\nDrew — never "Best," or any other sign-off.
+
+14. For Allure and Misona client emails addressed to multiple people, use "Hi All" as the greeting - not "Hi [Name]".

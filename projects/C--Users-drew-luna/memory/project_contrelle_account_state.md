@@ -18,12 +18,12 @@ All 4 active campaigns ENABLED as of 2026-05-21.
 
 | Campaign | Status | Bid Strategy | Notes |
 |---|---|---|---|
-| Contrelle - Brand | ENABLED | Max Conversions | New customer only mode on. Sizing Kit primary conversion. |
-| Contrelle - Search | ENABLED | Max Conversions | New customer only mode on. Sizing Kit primary conversion. |
-| Contrelle - PMax | ENABLED | Max Conversions | Sizing Kit only listing group (v01sp). New customer only mode on. |
-| Contrelle - Shopping | ENABLED | Manual CPC | All 3 SKUs: v01sp £2.50, v01p5 £0.65, v01p30 £0.65. PMax competes for Sizing Kit placements. Review Shopping vs PMax split at first account review. |
+| Contrelle - Brand | ENABLED | Max Conversions | New customer only mode on. Sizing Kit primary conversion. Daily cap: £15 (reduced 2026-05-30 from £30 — 2% IS loss, overcapped). |
+| Contrelle - Search | ENABLED | Max Conversions | New customer only mode on. Sizing Kit primary conversion. Daily cap: £45 (increased 2026-05-30 from £30 — 90% IS-lost-to-budget). |
+| Contrelle - PMax | ENABLED | Max Conversions | Sizing Kit only listing group (v01sp). New customer only mode on. Daily cap: £40. |
+| Contrelle - Shopping | ENABLED | Manual CPC | All 3 SKUs: v01sp £2.50, v01p5 £0.65, v01p30 £0.65. Daily cap: £45. |
 | Contrelle - Demand Gen | PAUSED | Max Conversions | No budget confirmed for 2026 — do not activate. |
-| Contrelle - PMax (Feed Only) | ENABLED | — | Launched 2026-05-27. Feed-only PMax. |
+| Contrelle - PMax (Feed Only) | ENABLED | — | Launched 2026-05-27. Feed-only PMax. Daily cap: £40. Only spending ~£24/mo actual — utilisation problem, not budget. |
 
 **Why Demand Gen is on hold:** No confirmed budget for 2026. May not launch this year.
 **How to apply:** Never suggest activating Demand Gen until user explicitly confirms budget and video creatives are ready.
@@ -131,6 +131,25 @@ CVR: Brand 4.6%, Shopping 3.3%, Search 1.4% (learning phase). Do not optimize aw
 - All old rule-based audiences (Remarketing - Users visited website/product pages) are CLOSED and Incompatible — WooCommerce migration broke old Magento URL rules
 - "All Users of Contrelle" — old auto-created, open but using legacy rules
 - "Site Visitors - All Pages (30 days)" — NEW 2026-05-16, listId=9388886003, rule: Page URL contains contrelle.com, 30-day window. Applied as observation to Search (23740334531) + Shopping (23740334537). Status: Populating/under review. NOT yet applied to Brand — do when campaigns re-enable.
+
+## Full Audit Run — 2026-05-30
+
+All 8 pending audits run in one session. Key scores:
+
+| Skill | Score | Top Finding |
+|---|---|---|
+| offer-auditor | 71% Good | No guarantee (D09 FAIL) |
+| placement-auditor | 0% Critical | Zero exclusion infrastructure; 218/221 PMax placements brand-unsafe |
+| geo-schedule-auditor | 84% Good | MALE +118% CPA + AGE_65+ +90.6% - monitor |
+| bidding-auditor | 48% Critical* | Expected at 9 days; Search 90% IS-lost-to-budget is real blocker |
+| budget-auditor | 80% Good | Search raised £30→£45; Shopping IS 48.5% also needs raise |
+| competitive-analyst | 69% Needs Attn | No competitor CPC pressure; all IS loss is budget-driven |
+| strategy-specialist | 60% Needs Attn | COGS missing; no guardrail KPIs; Conditional Go |
+| account-auditor | 88% Good | PMax auto-image/video opted IN (brand risk); R&E 6 impressions |
+
+*Bidding 48% is contextual - account 9 days old, structurally correct.
+
+Reports in `context/analysis/` — all generated 2026-05-30.
 
 ## 30-Day Performance Baseline (Apr 7 – May 6)
 

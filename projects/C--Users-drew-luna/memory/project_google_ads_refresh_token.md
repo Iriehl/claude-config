@@ -4,7 +4,7 @@ description: When the refresh token was last regenerated and how to do it again
 type: project
 originSessionId: b4ff4a23-9a3e-4f75-b4e0-163eb79f8ec5
 ---
-Refresh token last regenerated: 2026-05-28.
+Refresh token last regenerated: 2026-06-08.
 
 Current token: [stored in .env files only - never commit token values]
 

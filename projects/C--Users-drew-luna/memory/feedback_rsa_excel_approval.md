@@ -7,11 +7,12 @@ metadata:
   originSessionId: f9d4bd53-8b3e-4c9b-807d-c0e8dabecd42
 ---
 
-Every time RSAs are created via `/rsa-maker`, also generate an Excel approval file. This is baked into the SKILL.md Step 7.2.1 for all clients (misona, allure, contrelle, surrey-fire).
+Every time RSAs are created via `/rsa-maker`, also generate an Excel approval file. NOTE: ppcos v1.3.1 (updated 2026-06-05) removed this step from SKILL.md — the Excel step must be run manually after the skill completes.
 
 **Why:** Client-facing approval needs a formatted Excel, not just a CSV. Built 2026-05-27 during Misona Brand + Beach Towels batch.
 
 **How to apply:**
+- The SKILL.md no longer includes the Excel step as of v1.3.1 — add it manually after the skill runs
 - After running generate-csv.py (Step 7.2), run generate-excel.py with the same JSON input BEFORE deleting the JSON
 - Command: `python3 .claude/skills/rsa-maker/scripts/generate-excel.py <ads-json> <output-approval.xlsx> [extensions-json]`
 - Extensions JSON (sitelinks, callouts, snippets) is optional third argument

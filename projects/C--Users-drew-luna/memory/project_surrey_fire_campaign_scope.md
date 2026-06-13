@@ -26,16 +26,16 @@ DECISION 2026-05-26: Consolidate to single group. £235/mo split 3 ways = ~1 rea
 
 | Ad group | LP | Status |
 |---|---|---|
-| Buy Extinguishers Group | /buy-fire-extinguishers/ | ENABLED — sole active group going forward |
-| CO2 Extinguishers | /co2-fire-extinguishers/ | PENDING PAUSE |
-| Fire Extinguisher Types | /types-of-fire-extinguisher/ | PENDING PAUSE |
+| Buy Extinguishers Group | /buy-fire-extinguishers/ | ENABLED. Orphan + mis-routed ads REMOVED 2026-06-12. RSA still has "installation" language - next RSA pass |
+| CO2 Extinguishers | /co2-fire-extinguishers/ | PAUSED 2026-06-12 (consolidation executed per 2026-05-26 decision; Drew confirmed). Rewritten RSA kept in group for future use. Keywords ported to main group with keyword-level URL |
+| Fire Extinguisher Types | /types-of-fire-extinguisher/ | PAUSED 2026-06-12, same as CO2. Keywords ported with keyword-level URL |
 
 ### Fire Extinguishers Installation [Consolidated]
 | Ad group | LP | Status |
 |---|---|---|
 | Fire Extinguishers Installation Group | /fire-extinguisher-installation/ | ENABLED, 2 active RSAs (copy issues — see review file) |
-| Compliance & Regulations | /fire-extinguisher-regulations-uk/ | ENABLED, 1 PAUSED RSA (pending copy review) |
-| Office Requirements | /what-fire-extinguishers-does-my-office-need/ | ENABLED, 1 PAUSED RSA (pending copy review) |
+| Compliance & Regulations | /fire-extinguisher-regulations-uk/ | ENABLED, RSA ENABLED 2026-06-12 (approval lifted) |
+| Office Requirements | /what-fire-extinguishers-does-my-office-need/ | ENABLED, RSA ENABLED 2026-06-12 (approval lifted) |
 
 ### Fire Extinguishers Servicing [Consolidated]
 | Ad group | LP | Status |
@@ -45,13 +45,13 @@ DECISION 2026-05-26: Consolidate to single group. £235/mo split 3 ways = ~1 rea
 ### Surrey Fire - Fire Alarms
 | Ad group | LP | Status |
 |---|---|---|
-| Fire Alarm Servicing | /fire-alarm-servicing-maintenance-london-surrey-south-east/ | ENABLED, existing RSAs untouched |
-| Fire Alarm Systems | /fire-alarm-systems/ | ENABLED, 1 PAUSED RSA (pending copy review) |
-| Fire Alarm Installation | /fire-alarm-installation-london-surrey/ | ENABLED, 1 PAUSED RSA (pending copy review) |
-| Emergency Fire Alarm | /emergency-fire-alarm-call-out/ | ENABLED, 1 PAUSED RSA (pending copy review) |
-| Commercial Fire Alarm | /fire-alarm-specialist-london-surrey/ | ENABLED, 1 PAUSED RSA (pending copy review) |
+| Fire Alarm Servicing | /fire-alarm-servicing-maintenance-london-surrey-south-east/ | ENABLED; new RSA ENABLED 2026-06-12 |
+| Fire Alarm Systems | /fire-alarm-systems/ | Group PAUSED (dilution control - £300 budget); RSA left paused |
+| Fire Alarm Installation | /fire-alarm-installation-london-surrey/ | ENABLED, RSA ENABLED 2026-06-12 |
+| Emergency Fire Alarm | /emergency-fire-alarm-call-out/ | Group PAUSED (dilution control); RSA left paused |
+| Commercial Fire Alarm | /fire-alarm-specialist-london-surrey/ | Group PAUSED (dilution control); RSA left paused |
 
-## Ad Copy Review Files (all pending client approval)
+## Ad Copy Review Files (HISTORICAL - approval requirement LIFTED 2026-06-12, see [[surrey-fire-no-ad-approval]])
 - Fire Alarms: created/ad-copy-review/fire-alarms-2026-05-18.md
 - Installation: created/ad-copy-review/installation-campaign-2026-05-18.md
 - Servicing: created/ad-copy-review/servicing-campaign-2026-05-18.md (LIVE RSAs have copy issues — urgent)

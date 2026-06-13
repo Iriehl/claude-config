@@ -1,7 +1,6 @@
-{
+﻿{
   "permissions": {
     "allow": [
-      "*",
       "mcp__google-ads__list-accounts",
       "mcp__google-ads__google-ads-download-report",
       "mcp__chrome-devtools__take_screenshot",
@@ -51,7 +50,10 @@
     "enabled": true,
     "mode": "hold"
   },
+  "theme": "custom:green-text",
+  "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
-  "agentPushNotifEnabled": true
+  "enabledPlugins": {}
 }
+

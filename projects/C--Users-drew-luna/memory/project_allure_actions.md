@@ -1,191 +1,163 @@
 ---
 name: allure-outstanding-actions
-description: Prioritised action list for Allure Bath Fashions account — carry into next session to pick up where we left off
+description: Prioritised outstanding actions for Allure Bath Fashions — carry into every session
 metadata: 
   node_type: memory
   type: project
-  originSessionId: 4d69b752-1ed8-4eda-8687-bc0edb157935
+  originSessionId: a4308d6c-3fac-4a43-af54-722eae49d6dc
 ---
 
-Outstanding actions as of 2026-05-18. GMC label work COMPLETE. tROAS changes done. Search term audit COMPLETE (80/100). Negative lists linked. 5 brand keywords promoted. Soho House negated. Phase 1 executes Thursday 2026-05-22. Full GMC label status: context/analysis/pmax-20-label-status.md.
+Last updated: 2026-06-10. Full onboarding plan at C:\Users\drew\.claude\plans\build-a-plan-tidy-creek.md.
 
-## GMC CUSTOM LABEL WORK — COMPLETE (2026-05-17-18)
+## COMPLETED TODAY (2026-05-30)
+- Offer audit: 67% Needs Attention (context/analysis/offer-audit.md)
+- Strategy audit: 86% Good (context/analysis/strategy-audit.md)
+- PMax 20% Best supplemental feed refresh: beach towels added (30 IDs), Misona products + underperformers removed (15 IDs)
+- Budget updated: PMax 20% Best £1,000/mo, PMax 80% Other PAUSED, Standard Shopping £650/mo, Brand £150/mo
+- Client response to NCA/financial email sent (created/emails/2026-05-30-josh-response-nca-financial-data.txt)
+- business.md updated with confirmed NCA details, margin data, return rate, revenue targets
+- /strategy-specialist --execute goals: revenue target £8,500/mo by Sep 2026, KPI framework written
+- /offer-maker angles: 6 angles extracted (Warm traffic), context/offer-angles.md
+- /rsa-maker: Brand RSA + PMax text assets, created/rsas/20260530_*
+- /search-term-auditor: 94% Excellent, 3 terms to negate (pending MCP fix)
+- /competitive-analyst: 61% Needs Attention, Brand IS fix in progress
+- /report-generator: Executive summary, created/reports/20260530_allure_executive-summary.html
+- Customer Match list uploaded [DONE 2026-05-30]
+- Google Ads MCP fixed and reconnected [DONE 2026-05-30]
 
-Supplemental feed live: "Allure - PMax 20% Best Custom Labels" → SUPPLEMENTAL SOURCE 3 (feed ID 10659640367).
-253 variants, daily auto-refresh 00:00. No errors.
-Covers: top 10 revenue products, all dressing gown styles (inc. Velour), 4 high-ROAS performers.
-31.2% of 810-variant catalog labelled "20% best".
-Source: context/analysis/supplemental-feed-20-best.csv
-Full status: context/analysis/pmax-20-label-status.md
+## TIER 1 — BLOCKING NCA (Drew actions this week)
 
-## STRATEGY DECISIONS (Session B)
+### Customer Match upload [DONE 2026-06-08 — refreshed]
+- Re-uploaded from Shopify Admin to Google Ads Audience Manager (updated list)
 
-### Phase 1 - PARTIALLY DONE, remainder Thursday 2026-05-22
-- PMax 20% Best: tROAS 550% → 500% DONE 2026-05-18 (live data showed 469% actual, 475% too close to floor)
-- Standard Shopping: tROAS 500% → 475% DONE 2026-05-18 (needs room to scale budget)
-- Search Partners disabled on Brand + Standard Shopping DONE 2026-05-18
-- THURSDAY 2026-05-22: Pause PMax 80% Other + PMax 20% Best budget £600 → £900 + Standard Shopping budget £450 → £750
-- Budget stays £1,800. Brand stays £5/day.
-- REVISED from original plan (Shopping £450→£1,050): NCA goal requires PMax to carry more budget as primary new customer engine; Shopping gets moderate increase for efficiency.
+### GTM: new_customer parameter on purchase tag [DONE 2026-06-08]
+- Implemented via Shopify Customer Events pixel (not GTM)
+- ordersCount <= 1 logic, firing to Purchase (1) AW-654320985/dLckCOunnYIYENnKgLgC
 
-### NCA — NEW CUSTOMER ACQUISITION [CONFIRMED BY CLIENT 2026-05-21]
-- Goal: 80% new / 20% existing customers — explicitly stated in financial validation email as paper trail
-- Financial validation email v8 ready to send: created/emails/2026-05-26-financial-validation-questions-v8.txt
-- ROAS expected to drop to ~350% once NCA active (currently 436%) — client informed, paper trail in email
-- PENDING CLIENT RESPONSE: value premium confirmation (ROAS range acceptable?) + definition of "new customer" (website-only or all channels)
-- Drew to action: upload Customer Match list from Shopify Admin (overdue)
-- GTM action needed: add new_customer parameter to purchase conversion tag (D47 WARN)
-- NCA mode on PMax 20% Best: enable AFTER Customer Match live AND client confirms value premium/definition
-- RLSA on Standard Shopping: bid down on Customer Match list once live
+### Double counting fix [DONE 2026-06-10]
+- Old Additional Scripts were firing Purchase (1) with transaction_id: order_number (short format)
+- GADS custom pixel was also firing Purchase (1) with transaction_id: checkout.order.id (GID format)
+- Different formats = Google could not deduplicate = every purchase counted twice (~2x inflated conversions)
+- Fix: disabled 3 old scripts via Shopify upgrade guide (Google Ads gtag, GA purchase event, Ads conversion)
+- GADS custom pixel is now sole source. Expect ~50% drop in reported conversions - correct data, tell client.
 
-### Phase 2 - March/April 2027 (REVISED from January)
-- Full PMax consolidation: restore PMax 20% Best to all 810 products, enable NCA on full catalog
-- March-April is seasonal trough — right window for restructure (avoid Jan, May, Nov peaks)
-- PMax 20% Best: £1,200/mo. Standard Shopping: £450/mo. Brand: £150/mo.
-- NCA on full catalog gives Google maximum signal diversity for new customer acquisition.
+### Enable NCA on PMax 20% Best + Standard Shopping [DONE 2026-05-30]
+- £24.47 incremental value, GA4 Purchasers + Customer Match segments applied
+- GTM new_customer param still outstanding - NCA running on GA4 signal only until live
 
-### March 2026 collapse - root cause confirmed
-- PMax 20% Best tROAS was raised 512% -> 600% on 12 Feb, then 600% -> 650% on 19 Mar (wrong direction reactive tightening)
-- 650% in seasonal March demand = algorithm pulled back hard. Spend £497 (Feb) -> £192 (Mar).
-- Full change history: context/analysis/change-history-jan-mar-2026.md
+## TIER 2 — STRATEGY FOUNDATIONS
 
-**Why:** Avoid re-deriving work that's already been diagnosed. Pick up from here.
-**How to apply:** Read this at session start, cross-reference with business.md and relevant context files.
+### Brand IS check [CLOSED 2026-06-09 - CLIENT DECLINED BUDGET INCREASE]
+- Client said no to more Brand budget (£300-350/mo ask rejected)
+- Brand remains budget-capped at ~£150/mo; IS ~10% is the ceiling at this budget
+- No further action - accept Brand as brand protection only, not growth lever
 
----
+### Set specific numeric revenue target [HIGH]
+- D10 WARN from strategy audit
+- Run: /strategy-specialist --execute goals
+- Context: client £17-18K/month all-channel; GADS ~33% share; discuss stretch target with Drew
 
-## AWAITING CLIENT RESPONSE
+### PMax consolidation [DONE 2026-06-09 - LIVE]
+- Single PMax campaign now active (20% Best). 80% Other remains paused.
 
-### PMax Consolidation (HIGH - sent 2026-05-13)
-- Email sent: created/emails/2026-05-13-pmax-split-review.txt
-- Recommendation: consolidate PMax 20% Best + PMax 80% Other into single campaign, tROAS 500-525%
-- Evidence: 237pp ROAS decline post-split, ~£37,500 revenue lost over 15 months
-- Next: when client approves, apply via GADS API. Do not touch until confirmed.
+### /strategy-specialist [HIGH — not yet run]
+- Run after numeric target set
+- Needed before next negate/promote run
 
----
+## TIER 3 — OFFER AND COPY
 
-## GOOGLE ADS — READY TO ACTION
+### /offer-maker [HIGH]
+- Offer audit 67%: D05 FAIL (no unique mechanism), D07/D08 WARN (permanent sale), D01 WARN (value prop = category label)
+- Run to generate message angles; feeds RSA copy
 
-### Search Partners Disable — DONE 2026-05-18
-- Disabled on Brand and Standard Shopping by user.
+### RSA refresh [HIGH — after /offer-maker]
+- Current RSAs pre-audit; copy will be stronger with new angles
+- Target: PMax 20% Best first, then Standard Shopping
 
-### Brand IS Recovery Check (~2026-05-27) [updated 2026-05-17]
-- Brand strategy changed 2026-05-13 to Target IS 80%, Top of page, £1.00 max CPC
-- 30-day IS at validation: 9.99% (84.96% rank-lost, 6.55% budget-lost) — still in learning at 2026-05-17 (4 days old)
-- Check IS after 14 days from change (~2026-05-27): should climb toward 50%+
-- If IS recovers and budget becomes constraint → make case for raising to £15/day (£450/mo)
-- If IS still low → strategy change may need refinement
+## TIER 4 — TRACKING FIXES
 
-### Orphan Portfolio "Search Bid Strategy" — NO ACTION NEEDED (checked 2026-05-18)
-- TARGET_ROAS 170%, contains "Allure - Shopping - Mats" and "Allure - Shopping - Towels" — both PAUSED
-- Legacy campaigns from old product-type split structure. Can be archived/deleted at any time, no urgency.
+### CMP consent banner [NOT AN ALLURE ISSUE - CLOSED 2026-06-09]
 
----
+### Standard Shopping budget raise [READY JUNE 11]
+- /budget-auditor 84/100. Standard Shopping 585% ROAS + 26.1% IS Lost Budget
+- Raise £20/day -> £26/day (+£180/mo, projected +£1,050/mo revenue)
+- 14d hold on May 28 change releases June 11 - run /budget-optimizer raise
 
-## GOOGLE MERCHANT CENTER
+### analyze-budget-health.js break-even bug [LOW]
+- Script reads breakEven from biddingAudit.breakEvenROAS (500) not budgetAudit.breakEvenROAS (295)
+- Causes wrong verdicts on D04/D14/D15 - manually overridden in 2026-06-09 audit
+- Fix: update script to read from budgetAudit config block
 
-### Claim Brand Profile (LOW — one-time, quick)
-- GMC flagged: brand profile not claimed
-- Action: GMC → Marketing → Brand → Claim your brand profile
-- Benefit: control brand description and images in Google Search brand panel
+### Conversion window: 90d → 30d [AFTER NCA settled]
+- D31 WARN. Do after NCA is live and settled (~late June 2026)
 
-### Add Descriptions to 14 Throw Blanket Products (LOW)
-- GMC flagged 14 throw/blanket SKUs missing product descriptions
-- Action: update via Shopify product editor (field syncs to GMC automatically)
-- Products: Ombre Faux Mohair Throw, Aisling Faux Mohair Throw, Darwin Chenille Tartan Throw, Savannah Chenille Herringbone Throw, Arizona Zig Zag Herringbone Throw + others
+### Google tag migration [OUTSTANDING - 2026-06-10]
+- Tag migration wizard entered but NOT completed
+- Tag 1 (G-3MGSZ3E7PF): GA4 custom dimensions will be lost - need client sign-off before migrating
+- Tag 2 (G-Q1LYD6X4HE / AW-654320985): Google Ads tag - "no access" warning still showing
+- Aidan granted direct admin on Allure + Misona accounts 2026-06-10 - try wizard again in 24hrs
+- G&Y app currently only has GMC + GA4 connected. Google Ads = Inactive.
 
-### Fix Ireland "Missing Signals" (MEDIUM)
-- GMC shows Ireland = "Missing signals" vs UK = Top Quality Store
-- Action: GMC → Products and shop → Shop quality → Ireland → follow Fix CTA
-- Likely fix: ensure returns policy, business address, or shipping profile is configured for IE
+### Shopify Thank You page upgrade [OUTSTANDING - awaiting client approval]
+- August 26, 2026 deadline. Tracking already sorted. Just need client OK on page template change.
+- Hotjar + Yotpo disabled in old scripts - client needs to reinstall via Customer Events if wanted.
 
----
+### Verify enhanced conversions on order confirmation [LOW]
+- D46 WARN. Place test order, confirm EC fires in GTM preview on thank-you page
 
-## GA4 / TRACKING
+## TIER 5 — MONTHLY REPORTS
 
-### Investigate Unassigned Channel (MEDIUM)
-- 1.3k sessions/7-day in "Unassigned" — largest single channel, attribution gap
-- Likely cause: Shopify email flows without UTM parameters, or social bio links without UTMs
-- Action: check Klaviyo/Shopify Email for UTM tagging on automated flows; check link-in-bio tools
-- Check in GA4: Explore → Free form → filter by Unassigned → look at landing pages and source/medium
+### May 2026 report [DONE - SENT 2026-06-09]
 
-### Monitor Organic Search Decline (WATCH)
-- Organic Search down 28.2% in last 7 days (to 2026-05-15)
-- Could be seasonal, could be algorithmic. Check Google Search Console for impression/click trends
-- Flag to client if it continues beyond 14 days
+## TIER 6 — GMC + SHOPIFY HOUSEKEEPING [LOW]
 
-### Monitor Add to Cart Events (WATCH)
-- add_to_cart down 18.5% in 7 days (288 events)
-- If continues → review product page experience, sale price display, or seasonal product-mix
-- Cross-reference with Shopify CVR (-17%) — both declining together = product page or offer issue
+- Claim GMC brand profile: GMC > Marketing > Brand > Claim
+- Fix Ireland Missing Signals: GMC > Products and shop > Shop quality > Ireland > Fix CTA
+- Add descriptions to 14 throw blanket products via Shopify product editor
 
-### Singapore/India Traffic Spikes (LOW)
-- Singapore +163%, India +110% in last 7 days — unusual for a UK home textiles brand
-- Check if these sessions convert (GA4 Explore: sessions by country + purchase event)
-- If not converting, add as geo exclusions in GADS (campaigns currently UK-targeted — confirm)
+## SKILLS COMPLETED 2026-05-30
 
----
+| Skill | Result |
+|-------|--------|
+| /strategy-specialist --execute goals | DONE. Revenue target set: £8,500/mo by Sep 2026 (derived). KPI framework written. |
+| /offer-maker angles | DONE. 6 angles extracted for Warm (Shopping/PMax) traffic. context/offer-angles.md |
+| /rsa-maker | DONE. Brand RSA (8H, 3D, Hot). PMax text assets (Warm). created/rsas/20260530_* |
+| /search-term-auditor | DONE. 94% Excellent. Negate 3 terms. Do not negate 5 relevant products. |
+| /competitive-analyst | DONE. 61% Needs Attention. Brand IS fix in progress. Check 2026-06-14. |
+| /report-generator | DONE. Executive summary: created/reports/20260530_allure_executive-summary.html |
 
-## SHOPIFY / SITE
+## COMPLETED TODAY (continued)
+- 3 search term negatives added to "Search Term Exclusions" via API: pool towels, soho house pool towels, tumble twist bath mats
+- /lp-auditor: Partial 62% Needs Attention. D30 FAIL (Brand mobile CPA 758% of desktop). DISAPPROVED sitelink ID 46274276146 flagged. Structural/technical/ecommerce deferred (Chrome needed).
 
-### Investigate CVR Decline (MEDIUM)
-- Shopify CVR: 2.13%, -17% vs prior period despite sessions +18%
-- More traffic landing but fewer buying — could be: traffic quality shift, seasonal product-mix, pricing
-- Check: which landing pages are getting the new traffic? (GA4 → pages report by new sessions)
-- Cross with: which products have declining view_item → add_to_cart rates
+## LP AUDIT — DEFERRED MODULES
+- Connect Chrome (launch-chrome-debug.bat), then:
+  - `/lp-auditor structural` — will flag D11 FAIL (navigation), D02 WARN (category label VP), D05 WARN (no mechanism)
+  - `/lp-auditor technical` — Lighthouse mobile speed; Brand mobile CPA gap (D30 FAIL) suspected root cause
+  - `/lp-auditor ecommerce` — product page, cart, category
 
-### OOS Products — Monochrome Christmas Tree Hand Towel (LOW)
-- 2 variants out of stock. Seasonal product — client decision: restock or deactivate listing
-- If deactivated, ensure Shopping/PMax feed excludes it automatically (Shopify sets availability = out_of_stock)
+## COMPLETED 2026-06-01
 
-### Email List Building (STRATEGIC — low urgency)
-- 40,342 customers, low email opt-in rate observed in recent orders
-- Opportunity: increase email capture (pop-up, post-purchase prompt) to monetise existing traffic
-- Not a GADS task but affects the Unassigned channel and overall LTV
+| Skill | Result |
+|-------|--------|
+| /lp-auditor (full - all 6 modules) | DONE. 63% Needs Attention. CWV all Good. Mobile CVR gap is offer/structural. Key issues: no H1, generic CTAs, no shipping progress bar, Misona footer link. context/analysis/lp-audit.md |
+| /placement-auditor | DONE. 6% Critical baseline. Peppa Pig + religious revival on active PMax. Zero exclusion infrastructure. context/analysis/placement-audit.md |
+| /placement-optimizer | DONE. 195 ops applied. 6 video exclusions, 7 content labels, 21 bad domains (account-level + shared list "PPCOS - Bad Domains"), 140 app categories. context/analysis/placement-changelog.md |
+| Client website improvements email | DONE. 6 LP findings for client/dev. Holding to collate with Misona LP audit. created/emails/2026-06-01-website-improvements.txt |
 
----
+## AWAITING CLIENT - SALES CALENDAR (asked in meeting, ~2026-06-12)
+- Drew asked Allure for a full-year calendar: sales, planned discounts, seasonal peaks/dips
+- Chase if no reply by late June; feeds seasonality adjustments (known gap - never used)
+- Complement: pull 3-5yr monthly impression history from Google Ads to derive demand curve independently (planned, hub session)
 
-## CONVERSION TRACKING — AUDITED 2026-05-18 (81/100 Good)
+## SKILLS STILL TO RUN
 
-Full /tracking-specialist audit complete. One FAIL, all else clean.
-
-**FAIL — D28: Add CMP / consent banner (HIGH PRIORITY)**
-- All 4 CM v2 signals pre-granted on load, no user-interaction step. UK GDPR/PECR exposure.
-- Fix: Shopify CMP app (Cookiebot, OneTrust, or native). Configure CM v2 default denied + update on acceptance.
-
-**WARN — D31: Shorten Purchase (1) window from 90 to 30 days**
-- 90-day window inflates tROAS signal for £35 AOV impulse product. Change in a stable period.
-
-**WARN — D46: Verify enhanced conversions on order confirmation page**
-- EC dataLayer confirmed on add_to_cart. Can't verify on thank-you page without completing test purchase.
-
-**Clean:** Single primary, +8.8% WoW, Conversion Linker active, all campaigns on account defaults. Smart Bidding signal trustworthy.
-
-**Fix business.md GTM note:** Remove "GTM container is effectively abandoned (5 years stale)" — GT-K46MNTM is actively firing. Wrong container ID cited in old note.
-
-## CLIENT EMAIL SENT 2026-05-17
-- Data-request email sent: created/emails/2026-05-17-allure-data-request.txt
-- Asks: delivery speed, top 10-15 products by Shopify revenue (90d), GMC brand profile claim, Ireland GMC signals, 90-day conversion window heads-up
-- Needed for Session B strategy work (especially product revenue data)
-
-## SEARCH TERM WORK — COMPLETE 2026-05-18
-
-All ST work done in this session. Next ST audit recommended 14-30 days post-changes to measure impact.
-
-- Full 180d audit: 80/100 Good. Report: context/analysis/search-term-audit.md
-- Negative lists linked: Master Negatives + Blankets and Throws → all 3 non-brand campaigns
-- "Search Term Exclusions" list created + linked to all 3 non-brand campaigns
-- "soho house" PHRASE negated (ST-E01, overrode hard-block — tracking/strategy audits still missing)
-- 5 brand keywords promoted to Brand campaign (ST-E03)
-- 26 PMax underperforming core product terms — do NOT negate, awaiting PMax consolidation then route to /lp-auditor + /offer-auditor
-- Misona flag: NEVER add "misona" as a negative in any campaign — sister brand products running on Allure site
-
-## NEXT SKILLS TO RUN
-
-| Skill | Priority | Trigger |
-|-------|----------|---------|
-| /tracking-specialist | COMPLETE | 2026-05-18 — 81/100 Good. D28 FAIL (CMP) + D31 WARN (90d window) are pending client actions. |
-| /strategy-specialist | HIGH | Still missing — was hard-blocking ST-E01 (overridden). Needed before next negate or promote run. |
+| Skill | Priority | When |
+|-------|----------|------|
+| /placement-auditor (re-audit) | HIGH | 2-4 weeks after 2026-06-01 to confirm exclusions applied and score improvement |
+| /quality-score-auditor | MEDIUM | Run if Brand IS not recovered by 2026-06-14 |
+| /budget-auditor | MEDIUM | Run after 2026-06-05 (14d post budget change) |
 | /keyword-auditor | LOW | After PMax consolidation settles |
-| /competitive-analyst | LOW | Use GMC competitors as seed: kingofcotton.com, snoozetherapy.co.uk, mattressonline.co.uk |
-| /search-term-auditor | LOW | Re-run 14-30 days after 2026-05-18 changes to measure impact |
+
+**Why:** Carry into every session to avoid re-deriving completed work.
+**How to apply:** Read at session start, surface outstanding items relevant to the current task.

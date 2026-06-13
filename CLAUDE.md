@@ -91,6 +91,18 @@ When querying Google Ads via MCP, always restrict to what the task needs:
 
 Only run an unrestricted full pull when the task explicitly requires complete data (audits, full account analysis).
 
+### Chrome DevTools browser — launch anytime without asking
+
+A dedicated Claude browser is available at `C:\Users\drew\Desktop\launch-claude-browser.bat`. This opens a separate Chrome instance with remote debugging on port 9222 — it does not touch the user's regular browsing session. **Run it proactively whenever a task needs browser inspection (LP audits, GTM preview, page content extraction, Lighthouse, etc.) without asking the user first.** Use Bash to call:
+
+```
+cmd /c "C:\Users\drew\Desktop\launch-claude-browser.bat"
+```
+
+Then use `mcp__chrome-devtools__list_pages` to confirm the connection. If Chrome is already running in debug mode (port 9222 responds), skip the launch step.
+
+This applies to all client projects.
+
 ### Browser and screenshot usage
 
 Screenshots cost 1,000-4,000 tokens each. Default to Chrome MCP text-based tools (navigate, click, get_page_text, form input) for all browser work. Only use computer-use (screenshot-driven) when the task genuinely cannot be done via text tools. For complex UI editing (GTM, multi-step workflows): give step-by-step instructions and have the user make the changes.
@@ -220,7 +232,8 @@ Full data pulls and bulk reads are correct for: audits, monthly report generatio
 1. Plain text only - no markdown (no **, ##, backticks, tables, blockquotes). User copies directly into Outlook.
 2. No em dashes (—) anywhere. Use a regular hyphen (-) only.
 3. No hard line breaks within paragraphs. Each paragraph is one continuous line.
-4. Always save as a .txt file to `created/emails/` in the client project directory. Never just output in chat.
+4. Always save as a .txt file to `created/emails/` in the client project directory.
 5. File name format: `YYYY-MM-DD-short-description.txt` (e.g. `2026-05-15-dev-staging-refresh.txt`).
 6. NEVER edit an existing email file. If iterating, create a new versioned file (-v2.txt, -v3.txt) to preserve history.
 7. After saving, run: `Get-Content "path\to\file.txt" -Encoding UTF8 -Raw | Set-Clipboard` so the user can Ctrl+V straight into Outlook. Always use `-Encoding UTF8` — omitting it causes £ signs to appear as "Â£" in Outlook.
+8. Always output the final email in a plain code block in chat (no syntax label) so the desktop UI copy button is available. Do this in addition to saving the file - not instead of it.

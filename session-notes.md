@@ -1,18 +1,20 @@
+# 2026-05-30
+- Google Ads MCP re-auth: removed and re-added server at https://mcp.gaql.app/sse/... to force reconnect — status confirmed ✓ Connected after re-add
+- MCP command used: `claude mcp add --transport sse google-ads "<url>"` — fix pattern for future token/auth issues
+
 # 2026-05-29
 
-## Git backup setup - IN PROGRESS, needs completion
+## Git backup — COMPLETE (both repos live)
 
-- luna repo still has NO remote (noted as outstanding since 2026-04-22 - still not done)
-- Interrupted GitHub push left no trace locally - git config clean, no remote refs
-- GitHub account was renamed - need current username before adding remote
-- GitHub CLI (gh) not installed on this machine
-- 16+ modified/untracked files not yet committed (including Misona RSAs, Contrelle analysis, Allure memory)
-- All work is safe locally for now
+### luna (DONE)
+- Remote: https://github.com/Iriehl/luna.git
+- 198 files pushed — full client work backed up
 
-**Next session - 3 steps to complete:**
-1. User confirms current GitHub username (post-rename)
-2. `git remote add origin https://github.com/[username]/luna.git`
-3. `git push -u origin main`
+### ~/.claude config (DONE)
+- Remote: https://github.com/Iriehl/claude-config.git
+- 473 files committed (no credentials, no session logs)
+- .gitignore excludes: .credentials.json, history.jsonl, cache, sessions, projects/**/*.jsonl, tool-results, subagents
+- Google Ads refresh token redacted from project_google_ads_refresh_token.md memory file (was stored inline — fixed before push)
 
 ---
 

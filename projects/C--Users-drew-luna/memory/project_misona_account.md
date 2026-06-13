@@ -11,7 +11,7 @@ Misona workspace initialized 2026-05-14. ecommerce client (UK). Sustainable bath
 
 - Customer ID: 7048948399
 - MCC: 2284398748 (same as allure/surrey-fire)
-- Website: https://misona.co.uk
+- Website: https://misona.co.uk/ (single domain - all LPs, product pages, and collections are subpaths of this root)
 - Location code: 2826 (UK)
 - Primary conversion: "Purchase"
 - Bidding KPI: ROAS
@@ -83,7 +83,7 @@ Performance tanked late April/early May due to chaotic budget and tROAS changes:
 
 **Search term audit (2026-05-14):** Score 77/100. Top actions: /search-term-optimizer catalog (competitor brands + catalog gaps on PMax which has zero negatives). Two baulane terms confirmed irrelevant (£19.26 + £6.87 spend, 0 conv).
 
-**Tracking audit (2026-05-14):** Score 62%. Module breakdown: Completeness 74% (Good), Tag Health 65%, Consent Mode 47% (Critical), Attribution 31% (Critical). Key issues: (1) Reduce Purchase click window 90→30 days — driving 1.38x over-attribution, 38% ROAS inflation; (2) Fix CM v2 defaults in Booster EU Cookie (all signals to denied — GDPR gap); (3) Demote 3 zombie primary actions (Android installs, YouTube subs, YouTube follow-on views) to secondary. Purchase signal itself is clean — directional data is reliable.
+**Tracking audit (2026-05-14):** Score 62%. ALL CRITICAL ISSUES RESOLVED 2026-06-10: click window fixed 90→30 days, zombie primaries removed/demoted, CM v2 consent defaults verified working end-to-end. Key issues: (1) Reduce Purchase click window 90→30 days — driving 1.38x over-attribution, 38% ROAS inflation; (2) Fix CM v2 defaults in Booster EU Cookie (all signals to denied — GDPR gap); (3) Demote 3 zombie primary actions (Android installs, YouTube subs, YouTube follow-on views) to secondary. Purchase signal itself is clean — directional data is reliable.
 
 **Strategy audit (2026-05-14):** Score 52%. Goals & KPIs 47% (Critical). PMax 4x tROAS unachievable (delivering 2.60x 30d / 3.35x 7d) — algorithm throttled. Shopping 2.5x tROAS = ~1.81x backend, below 2x floor. Gross margin still unknown. PMax tROAS corrected to 3x in previous session (3x Google Ads = ~2.17x backend, clears floor). Shopping 2x tROAS still below floor — needs raising to 2.76x.
 
@@ -110,6 +110,11 @@ Two hard-blocks triggered by pre-flight gate. Cannot generate catalog operations
 - Unassigned sessions spiked +257.6% in GA4 — UTM coverage gap or new untagged source
 - UK traffic = 52% of sessions, USA = 23% and growing +27.7% — international opportunity
 - Delivery gap: competitors average £2.16/order vs Misona £4.95 (under £50) — flagged by GMC
+
+**Conversion window settings (updated 2026-06-09):**
+- Click-through: 30 days (was 90 days - fixed 2026-06-09)
+- Engaged view: 1 week
+- View-through: 3 days
 
 **CRITICAL ACTION — GTM migration (must do before Shopify deprecates GTM tracking):**
 Shopify is removing GTM-based tracking support. GA4 already migrated to Shopify G&Y app (GTM tags paused). Google Ads conversion tag (GADS Conversion Tracking UK, AW-10807471978) is NOT yet migrated — still fires via GTM. If Shopify removes GTM before migration, conversion tracking will go dark. Action: migrate GADS conversion tag to Shopify Google & YouTube app ASAP.
@@ -153,6 +158,10 @@ Shopify confirmed: Off White "Sell when out of stock" = OFF, inventory tracked O
 
 Pre-disruption blended 4.17x (clean 9-month window) is the benchmark to return to. Do not plan to beat it materially — it was already a strong number for this niche.
 
+**Campaign status update (2026-06-09):**
+- Misona - Beach Towels (ID 23883396159): PAUSED. Budget (£150/mo) redistributed - PMax raised to £750/mo, Shopping raised to £600/mo.
+- New YouTube video to add to PMax as video asset: https://www.youtube.com/shorts/dFs_OwaCrac (add via UI: PMax campaign → Asset groups → Add asset → Video)
+
 **New campaigns — LIVE as of 2026-05-28:**
 - Misona - Brand (ID 23888625509, ENABLED) — TIS 100% absolute top, max CPC £1.50, £5/day
   - Ad group: Brand | 7 brand keywords (exact + phrase) | 2 RSAs enabled
@@ -163,6 +172,11 @@ Pre-disruption blended 4.17x (clean 9-month window) is the benchmark to return t
   - IDs: campaign 23883396159, ad group 205416270468
 - Both campaigns: UK geo targeting, brand negatives added to PMax + Shopping
 - Implementation scripts: .claude/skills/gads-context/scripts/ (implement-campaigns.js, implement-assets.js, add-brand-negatives.js, add-beach-towel-keywords.js, add-brand-beach-towel-keywords.js, enable-campaigns.js)
+
+**Customer Match — UPLOADED 2026-06-09 (in client meeting)**
+
+**Client reporting requirements (updated 2026-06-09):**
+NCA is NOT planned for Misona. Omit New Customer % card, Section 6 (NCA Summary), and Section 7 (Revenue Source Overview) from all Misona monthly reports. NCA applies to Allure only.
 
 **STANDING RULE — "12-month guarantee":**
 Client confirmed: do NOT use "12-month guarantee" anywhere in ads — not in RSA descriptions, not in callouts, not in any copy. Removed from all assets 2026-05-28.
@@ -200,7 +214,7 @@ JUNE 1 CHECKPOINT:
 
 IMMEDIATE (Client — must do ASAP):
 8. CRITICAL: Migrate Google Ads conversion tag from GTM to Shopify Google & YouTube app. Shopify deprecates GTM post-checkout scripts end June 2026.
-9. Confirm Loop mat COGS
+9. ~~Confirm Loop mat COGS~~ — RESOLVED 2026-05-29: £10.00
 10. Confirm pricing calendar — when does current sale period end?
 11. Off White restock timeline
 12. Green variant details — launch date, price, COGS
@@ -233,7 +247,7 @@ ONGOING:
 | Ribbed Organic Cotton Towels | £5.00 | £12 (hand towel) | 58.3% | 2.16x |
 | Natural Bamboo Cotton Towels | £5.00 | £15 (hand towel) | 66.7% | 1.90x |
 | Ribbed Organic Cotton Bath Mat | £7.64 | £25 | 69.4% | 1.82x |
-| Loop Organic Cotton Bath Mat | **NOT ENTERED** | £30 | Unknown | Unknown |
+| Loop Organic Cotton Bath Mat | £10.00 [CONFIRMED 2026-05-29] | £30 | 66.7% | 1.90x |
 
 KEY INSIGHT: Blue diatomite mat (3.16x BEP) is the ONLY product where PMax's 2.62x ROAS is below break-even. All towels and ribbed mats are profitable at current PMax performance. Blended account is profitable. Only Blue mat orders at sale price are marginal.
 

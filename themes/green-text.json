@@ -1,0 +1,10 @@
+{
+  "name": "Green Text",
+  "base": "dark",
+  "overrides": {
+    "claude": "#7aaa88",
+    "text": "#2ab8c8",
+    "promptBorder": "#2ab8c8",
+    "briefLabelYou": "#2ab8c8"
+  }
+}

@@ -1,6 +1,6 @@
 ---
 name: Allure Account State
-description: 4 campaigns, £1,800/mo; Phase 1 executed 2026-05-22 (PMax 80% Other paused, PMax 20% Best £900, Shopping £750); NCA 80/20 paper trail in email v8 (ready to send); value premium + new customer definition PENDING client response; Customer Match upload overdue (Drew); new_customer tag param needed (D47); reporting moving to monthly; Phase 2 March/April 2027
+description: 4 campaigns, £1,800/mo; Phase 1 executed 2026-05-22 (PMax 80% Other paused, PMax 20% Best £900, Shopping £750); NCA target 20% new customers to start (confirmed 2026-06-01); paper trail email v8 ready to send; value premium + new customer definition PENDING client response; Customer Match upload overdue (Drew); new_customer tag param needed (D47); reporting moving to monthly; Phase 2 March/April 2027
 type: project
 originSessionId: 1950a137-c812-4dea-86f2-b1f9a45df687
 ---
@@ -18,9 +18,9 @@ Long-running ecommerce account (years of data). UK bath mats, towels, throws —
 | Campaign | Type | Bidding | Target | Monthly Budget |
 |----------|------|---------|--------|----------------|
 | Allure - Brand | Search | **Target IS 80%, Top of page, £1.00 max CPC** (changed 2026-05-13) | 80% IS | £150 (£5/day cap) |
-| Allure - PMax - 20% Best | PMax | Max Conv Value | tROAS 500% (changed 2026-05-18, was 550%) | £600 |
-| Allure - PMax - 80% Other | PMax | Max Conv Value | tROAS 500% | £600 — **PAUSING THURSDAY 2026-05-22** |
-| Allure - Standard Shopping | Shopping | Target ROAS | 475% (changed 2026-05-18, was 500%) | £450 — raising to £1,050 Thursday 2026-05-22 |
+| Allure - PMax - 20% Best | PMax | Max Conv Value | tROAS 500% | £1,000 (updated 2026-05-30) |
+| Allure - PMax - 80% Other | PMax | Max Conv Value | tROAS 500% | **PAUSED** (2026-05-22) |
+| Allure - Standard Shopping | Shopping | Target ROAS | 475% | £650 (updated 2026-05-30) |
 
 Total: £1,800/mo
 
